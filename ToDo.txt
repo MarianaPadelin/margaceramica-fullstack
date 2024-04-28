@@ -1,0 +1,56 @@
+--no se importa chai from “chai” porque no existe. Se importa {expect} directamente  y no es necesario declarar la constante inicial de “const expect = chai.expect” ✓
+--modificar la ruta api/products/getProduct/:id (sacarle el getProduct) ✔
+
+
+
+-------combinación con frontend------
+
+
+tengo que agregar: 
+limite
+filtrado por stock
+sort por precio
+
+ver que pasa cuando se vence la sesión (no cuando se cierra)
+mostrar el precio con descuento en "precio final" en carrito
+vista del chat en front ✔
+vista de contacto ✔
+
+
+---pasos para el deploy--- la clase arranca al minuto 40
+en el script principal cambiar nodemon por node ✔
+armar una db en mongo atlas con sus 3 colecciones (prod, dev y QA) ✔
+pasar todas las variables de entorno a la pestaña de variables
+hacer el deploy primero del back, despues pasarle el url base al front, despues hacer el deploy de front
+para hacer nuevas ramas (solo la ppal hace el deploy) "checkout -b dedelopement" "git add ." git commit, git push origin -u developement
+git checkout -b "nombre de la rama" (me paro en la rama nueva)
+git add .
+git commit -m "nombre de los cambios"
+git push origin -u "nombre de la rama"  
+
+
+
+-----Proyecto Final-------
+--crear mongo atlas ✔
+--hacer el dto ✔
+--optimizar las rutas ✔
+--docs, tests y postman
+--optimizar dirname ✔
+--cambiar el url raiz ✔
+-- cambiar url en github 
+--pasar a modo producción ✔
+--deploy en railway app
+--exportar archivo JSON desde postman con todas las pruebas (sobre todo lo que no esté en el front)
+--video de flujo de app
+--fijarse si anda factory
+--no anda el chat ✔
+
+
+--Detalles finales--
+
+--borrar los console.log
+--revisar las vistas de handlebars y borrar las que están en el front
+--borrar ToDo.txt
+--enviar el .env aparte
+--enviar datos extra: codigo de descuento "MARGACERAMICA", mail admin, 
+--borrar archivo .errors

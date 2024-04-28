@@ -1,0 +1,123 @@
+[
+  {
+    "title": "Mate sandía",
+    "description": "Truncado",
+    "price": 5000,
+    "code": "mate01",
+    "category": "mates",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1688843772/productos/d7caf281-73ef-4410-baf4-9b4d99db01f4_vkq9fu.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Bowl rococó",
+    "description": "Bowl mediano para sopas y salsas",
+    "price": 7000,
+    "code": "bowl01",
+    "category": "bowls",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685976821/productos/bcfaa4f9-6439-4b35-995c-5a6d582f67e8_jtsfyo.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Plato playo",
+    "description": "Plato tamaño grande",
+    "price": 8000,
+    "code": "plato01",
+    "category": "platos",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685976976/productos/5e43392c-89d0-4424-9077-c7101677c105_ovbxcg.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Bowl sandía",
+    "description": "Bowl mediano para sopas y salsas",
+    "price": 7000,
+    "code": "bowl02",
+    "category": "bowls",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685833592/productos/bfc50507-65b8-4fb2-8aaa-92f35dd76e61_evj2ok.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Tazas floreadas azules",
+    "description": "Juego de 2 tazas tamaño pocillo.",
+    "price": 8000,
+    "code": "tazas01",
+    "category": "tazas",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685822538/productos/4812f340-b66f-4541-ba52-3406ef2e5e43_dq6n5l.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Tazas floreadas lila",
+    "description": "Juego de 2 tazas tamaño pocillo.",
+    "price": 8000,
+    "code": "tazas02",
+    "category": "tazas",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685822340/productos/813168d7-e172-4cdb-9ed2-f2b091ce64bf_emt2sk.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Jabonera floreada",
+    "description": "Tamaño mediano, con antideslizante.",
+    "price": 5000,
+    "code": "jaboneras01",
+    "category": "jaboneras",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685802301/productos/45a8e8e3-e91a-4b14-b6ab-81ae78ff458a_w3gmal.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Bowl cítrico",
+    "description": "Bowl mediano para sopas y salsas",
+    "price": 7000,
+    "code": "bowl03",
+    "category": "bowls",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685802189/productos/690c02bd-3f49-465d-bf84-3802e23a5d41_rfxnqu.jpg",
+    "owner": "admin"
+  },
+
+  {
+    "title": "Mate cítrico",
+    "description": "Truncado",
+    "price": 5000,
+    "code": "mate02",
+    "category": "mates",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685802164/productos/342e9d92-0773-46d9-84e7-dac3f4901a7a_vvqlo5.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Tazas lavanda",
+    "description": "Juego de 2 tazas tamaño pocillo.",
+    "price": 8000,
+    "code": "tazas03",
+    "category": "tazas",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685801980/productos/5a3b46c0-8b4b-48cd-bc1c-1af38dbe20af_wmbucy.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Tazón floreado azul",
+    "description": "Tazón tamaño grande",
+    "price": 7000,
+    "code": "tazas04",
+    "category": "tazas",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685801910/productos/d0d5a2dc-f5ba-4da3-8d9c-14dc72664400_x8aqyr.jpg",
+    "owner": "admin"
+  },
+  {
+    "title": "Bowl montañas",
+    "description": "Bowl mediano para sopas y salsas",
+    "price": 7000,
+    "code": "bowl04",
+    "category": "bowls",
+    "stock": 20,
+    "thumbnails": "https://res.cloudinary.com/dvxkjikvk/image/upload/v1685802055/productos/5511ce7c-a7e8-45c6-a4e2-0fd20e427510_soyige.jpg",
+    "owner": "admin"
+  }
+]

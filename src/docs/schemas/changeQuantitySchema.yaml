@@ -1,0 +1,11 @@
+components:
+  requestBodies:
+    ChangeQuantity:
+      type: object
+      properties:
+        quantity: 
+          type: Number
+          description: Cantidad de unidades de un producto determinado
+
+      example: 
+        quantity: x

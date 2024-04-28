@@ -1,0 +1,11 @@
+table, th, td{
+    border: 1px solid slategrey;
+}
+
+th, td{
+    width: 10vw;
+    text-align: center;
+    height: 6vh;
+}
+
+

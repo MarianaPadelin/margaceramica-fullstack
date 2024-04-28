@@ -1,0 +1,109 @@
+paths: 
+  /api/carts/{cid}/product/{pid}:
+    post:
+      summary: Agrega un nuevo producto, especificado por el parámetro :pid, al carrito, especificado por el parámetro :cid.
+      tags:
+        - Carts & Products
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: id del carrito que se busca.
+          schema:
+            $type: String
+
+        - name: pid
+          in: path
+          required: true
+          description: id del producto que se quiere agregar.
+          shema:
+            $type: String
+
+      responses:
+        "200":
+          description: Request exitoso. Devuelve el carrito con su array de productos.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cart"
+
+        "400":
+          description: Request no encontrado.
+        "500":
+          description: Error del lado del servidor.
+
+    put:
+      summary: Modifica la cantidad de un producto, especificado por el parámetro :pid, del carrito, especificado por el parámetro :cid.
+      tags:
+        - Carts & Products
+
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: id del carrito que se busca.
+          schema:
+            $type: String
+
+        - name: pid
+          in: path
+          required: true
+          description: id del producto del que se quiere cambiar la cantidad.
+          schema:
+            $type: String
+
+      requestBody:
+        content:
+          application/json:
+            required: true
+            schema:
+              $ref: "#/components/requestBodies/ChangeQuantity"
+
+  
+
+      responses:
+        "200":
+          description: Request exitoso. Retorna el carrito con la cantidad de producto modificada.
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/Cart"
+
+        "400":
+          description: Request no encontrado.
+        "500":
+          description: Error del lado del servidor.
+
+    delete:
+      summary: Elimina un producto, especificado por el parámetro :pid, del carrito, especificado por el parámetro :cid.
+      tags:
+        - Carts & Products
+
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: id del carrito que se busca.
+          schema:
+            $type: String
+
+        - name: pid
+          in: path
+          required: true
+          description: id del producto que se quiere eliminar.
+          schema:
+            $type: String
+
+      responses:
+        "200":
+          description: Request exitoso. Retorna el carrito sin el producto que se eliminó.
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/Cart"
+
+        "400":
+          description: Request no encontrado.
+        "500":
+          description: Error del lado del servidor.
+

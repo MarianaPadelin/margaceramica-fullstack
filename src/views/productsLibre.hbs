@@ -1,0 +1,63 @@
+
+<div>
+  <h2>Lista de productos</h2>
+  <p>Vista al público en general</p>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>TITLE</th>
+      <th>DESCRIPTION</th>
+      <th>PRICE</th>
+      <th>CODE</th>
+      <th>STATUS</th>
+      <th>CATEGORY</th>
+      <th>STOCK</th>
+      <th>THUMBNAILS</th>
+      <th>OWNER</th>
+    </tr>
+    <tbody>
+      {{#each products.docs}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.code}}</td>
+          <td>{{this.status}}</td>
+          <td>{{this.category}}</td>
+          <td>{{this.stock}}</td>
+          <td>{{this.thumbnails}}</td>
+          <td>{{this.owner}}</td>
+          </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <br />
+
+
+    <div class="position-relative m-4">
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {{#if products.hasPrevPage}}
+          <li class="page-item"><a
+              class="page-link"
+              href="/api/products/?page={{products.prevPage}}&&limit={{products.limit}}"
+            >Previous</a></li>
+        {{/if}}
+
+        {{#if products.hasNextPage}}
+          <li class="page-item"><a
+              class="page-link"
+              href="/api/products/?page={{products.nextPage}}&&limit={{products.limit}}"
+            >Next</a></li>
+        {{/if}}
+
+      </ul>
+    </nav>
+    <p>
+      Current Page:
+      {{products.page}}
+    </p>
+  </div>

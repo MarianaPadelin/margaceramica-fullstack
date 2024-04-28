@@ -1,0 +1,24 @@
+h2{
+    display: flex;
+    justify-content: center
+    
+}
+
+.divCentrado{
+    display: flex;
+    justify-content: center
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh;
+
+}
+
+input{
+    width: 60%;
+    padding: 2vh;
+    margin: 10px!important;
+}

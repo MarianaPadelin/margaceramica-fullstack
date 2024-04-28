@@ -1,0 +1,31 @@
+components:
+  schemas:
+    Ticket: 
+      type: object
+      properties: 
+        _id: 
+          type: ObjectId
+          description: ID del ticket autogenerado por mongo.
+        cart: 
+          type: Object
+          description: Carrito del usuario.
+        amount: 
+          type: Number
+          description: Precio total de la compra. 
+        purchaser: 
+          type: String
+          description: email del usuario donde se enviará el ticket.
+        purchase_datetime:
+          type: Date
+          description: Fecha y hora de emisión del ticket
+
+           
+
+      example: 
+        cart: { _id: 6602e5fc562c97dcab1a1f41 }
+        amount: 15000
+        purchaser: 4@gmail.com
+        purchase_datetime: Tue Mar 26 2024 21:12:06 GMT-0300 (hora estándar de Argentina)
+        _id: 66036456ae5571bca6df0c10
+
+                

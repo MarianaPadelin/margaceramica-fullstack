@@ -8,7 +8,7 @@ import {
   getProducts,
 } from "../../Controllers/API/products.controller.js";
 import { passportCall, authorization } from "../../utils/authorizations.js";
-
+import cors from "cors";
 const router = Router();
 router.use(
   cors({

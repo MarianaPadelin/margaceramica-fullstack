@@ -9,8 +9,7 @@ import {
   getOneCart,
   postCart,
 } from "../../Controllers/API/cart.controller.js";
-// import { passportCall, authorization } from "../../utils/authorizations.js";
-
+import cors from "cors";
 import { passportCall, authorization } from "../../utils/authorizations.js";
 const router = Router();
 router.use(

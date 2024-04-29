@@ -12,9 +12,9 @@ dotenv.config({
 // console.log("Modo de persistencia en " + persistence)
 console.log("Environment: " + environment)
 
-
+//tuve que sacar algunas variables de entorno porque railway sólo me deja poner 10. 
 export default {
-  port: process.env.PORT,
+  port: process.env.PORT || 8080,
   mongoUrl: process.env.MONGO_URL,
   secret: process.env.secret,
   privateKey: process.env.PRIVATE_KEY,
@@ -23,11 +23,12 @@ export default {
   clientID: process.env.clientID,
   clientSecret: process.env.clientSecret,
   callbackURL: process.env.callbackURL,
-  persistence: persistence,
+  persistence: "mongoDB",
   emailAcount: process.env.cuentadegmail,
   appPassword: process.env.APP_PASSWORD,
-  maxLevelConsole: process.env.LEVEL_CONSOLE,
-  maxLevelFile: process.env.LEVEL_FILE,
-  restoreLink: process.env.RESTORE_PASSWORD_EMAIL,
-  rootUrl: process.env.ROOT_URL,
+  maxLevelConsole: "info",
+  maxLevelFile: "error",
+  restoreLink:
+    "https://proyectofinalbackend-production-12a7.up.railway.app/api/users/resetPassword/",
+  rootUrl: "https://proyectofinalfrontend-production-b4ee.up.railway.app/",
 };

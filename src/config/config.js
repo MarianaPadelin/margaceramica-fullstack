@@ -30,5 +30,5 @@ export default {
   maxLevelFile: "error",
   restoreLink:
     "https://proyectofinalbackend-production-12a7.up.railway.app/api/users/resetPassword/",
-  rootUrl: "https://proyectofinalfrontend-production-b4ee.up.railway.app",
+  rootUrl: process.env.rootUrl,
 };

@@ -61,12 +61,13 @@ export const deleteUser = async (req, res) => {
   }
 };
 export const modifyUser = async (req, res) => {
-  const { uid } = req.params;
-
+  // const { uid } = req.params;
+  const uid = res.user._id
+  req.logger.info(uid)
   try {
     let user = await userService.getUser(uid);
     let newRole;
-    console.log(user);
+
     if (!user) {
       res.status(404).json({
         message: "User not found",

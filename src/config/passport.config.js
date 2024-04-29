@@ -8,7 +8,7 @@ import config from "./config.js";
 import { cartService } from "../Services/services.js";
 import { userService } from "../Services/services.js";
 import __dirname from "../dirname.js";
-import UserDTO from "../Services/DTOS/user.dto.js";
+// import UserDTO from "../Services/DTOS/user.dto.js";
 
 // import __dirname from "../utils/dirname.js";
 
@@ -150,7 +150,7 @@ const inicializePassport = () => {
             cart: newCart,
             loggedBy: "passportLocal",
           };
-          const userDTO = new UserDTO({first_name, last_name, email}) 
+          // const userDTO = new UserDTO({_id, first_name, last_name, email}) 
           const result = await userService.createUser(user);
           return done(null, result);
         } catch (error) {

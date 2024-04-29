@@ -11,6 +11,7 @@ export default class UserDao {
       let users = [];
       usuarios.forEach((user) => {
         let DTO1 = new UserDTO(
+          user._id,
           user.first_name,
           user.last_name,
           user.email,
@@ -53,6 +54,7 @@ export default class UserDao {
       return error;
     }
   }
+
   async updateUserRole(_id, role) {
     try {
       if (mongoose.Types.ObjectId.isValid(_id)) {
@@ -100,10 +102,7 @@ export default class UserDao {
 
   async updatePassword(email, password) {
     try {
-      console.log("llego al dao");
       const newPassword = createHash(password);
-      console.log(email);
-      console.log(newPassword);
       const result = await userModel.findOneAndUpdate(
         { email: email },
         { password: newPassword }
@@ -138,11 +137,7 @@ export default class UserDao {
   }
 
   async createUser(user) {
-    //mejorar esta función para que cree al usuario
     try {
-      // const newUserDTO = new UserDTO(user);
-
-      // const result = await userModel.create(newUserDTO);
       const result = await userModel.create(user);
       return result;
     } catch (error) {
@@ -154,7 +149,7 @@ export default class UserDao {
       if (mongoose.Types.ObjectId.isValid(_id)) {
         return await userModel.findByIdAndDelete(_id);
       }
-      return "Id format not valid";
+      return "id format not valid"
     } catch (error) {
       return error;
     }

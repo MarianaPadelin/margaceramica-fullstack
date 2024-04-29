@@ -1,7 +1,8 @@
 import { Router } from "express";
 import {
   switchUser,
-  getUser,
+  getUserById,
+  findUserByEmail,
   uploadFiles,
   getAllUsers,
   deleteUser,
@@ -32,7 +33,9 @@ router.use(
 
 router.get("/", passportCall("jwt"), authorization(["admin"]), getAllUsers);
 
-router.get("/:uid", passportCall("jwt"), authorization(["admin"]), getUser);
+router.get("/:uid", passportCall("jwt"), authorization(["admin"]), getUserById);
+
+// router.get("/:email", passportCall("jwt"), authorization(["admin"]), findUserByEmail)
 
 router.put("/:uid", passportCall("jwt"), authorization(["admin"]), modifyUser);
 

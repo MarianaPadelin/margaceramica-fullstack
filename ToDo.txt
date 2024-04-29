@@ -44,6 +44,7 @@ git push origin -u "nombre de la rama"
 --exportar archivo JSON desde postman con todas las pruebas (sobre todo lo que no esté en el front)
 --video de flujo de app
 --no anda el chat ✔
+--no anda la ruta switch role admin en postman, ni switch role
 
 
 --Detalles finales--

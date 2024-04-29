@@ -5,7 +5,6 @@ export default class UserRepository {
   getAll = async () => {
     return await this.dao.getAll();
   };
-  //a este llamarlo getById
   getUser = async (uid) => {
     return await this.dao.getUser(uid);
   };
@@ -30,11 +29,9 @@ export default class UserRepository {
   deleteUser = async (uid) => {
     return await this.dao.deleteUser(uid);
   };
-  //a este llamarlo getByEmail
   findUser = async (email) => {
     return await this.dao.findUser(email);
   };
-  //createUser (arma el DTO)
   createUser = async (user) => {
     console.log("llego al repository")
     return await this.dao.createUser(user);

@@ -16,50 +16,22 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
-export const deleteUser = async (req, res) => {
+
+export const getUserById = async (req, res) => {
   const { uid } = req.params;
+  const user = await userService.getUser(uid);
 
-  try {
-    const user = await userService.getUser(uid);
-
-    if (!user) {
-      return res.status(404).json({
-        message: "User not found",
-      });
-    }
-
-    let userLastConnection = user.last_connection;
-    let limitConnection = new Date();
-    limitConnection.setDate(limitConnection.getDate() - 2);
-    if (userLastConnection < limitConnection) {
-      req.logger.info(
-        "User offline for over two days, the account will be deleted"
-      );
-
-      let usuarioBorrado = await userService.getUser(uid);
-      let email = usuarioBorrado.email;
-      console.log(usuarioBorrado);
-
-      sendUserDeletedEmail(email);
-      req.logger.info("email sent to" + email);
-      await userService.deleteUser(uid);
-      req.logger.info(`User ${uid} deleted`);
-      return res
-        .status(200)
-        .send({ message: "user deleted successfully", user });
-    }
-    req.logger.info("User has been active, the account can't be deleted");
-    return res
-      .status(400)
-      .send({ message: "Active user can´t be deleted", user });
-  } catch (error) {
-    req.logger.error(error.cause);
-    return res.status(500).send({
-      messsage: "Error deleting user",
-      error: error,
-    });
-  }
+  res.status(200).send({ user });
 };
+
+export const findUserByEmail = async (req, res) => {
+  const { email } = req.params;
+  const user = await userService.findUser(email);
+
+  res.status(200).send({ user });
+};
+
+
 export const modifyUser = async (req, res) => {
   const { uid } = req.params;
 
@@ -76,11 +48,11 @@ export const modifyUser = async (req, res) => {
     const prevRole = user.rol;
     if (prevRole === "user") {
       newRole = "premium";
-      userService.updateUserRole(uid, newRole);
+      await userService.updateUserRole(uid, newRole);
       return req.logger.info(`User ${uid} changed role to ${newRole}`);
     } else {
       newRole = "user";
-      userService.updateUserRole(uid, newRole);
+      await userService.updateUserRole(uid, newRole);
       return req.logger.info(`User ${uid} changed role to ${newRole}`);
     }
   } catch (error) {
@@ -92,7 +64,47 @@ export const modifyUser = async (req, res) => {
   }
 };
 
+export const deleteUser = async (req, res) => {
+  const { uid } = req.params;
+  console.log(uid)
+  try {
+    const user = await userService.getUser(uid);
+    console.log(user)
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
 
+    let userLastConnection = user.last_connection;
+    let limitConnection = new Date();
+    limitConnection.setDate(limitConnection.getDate() - 2);
+    if (userLastConnection < limitConnection) {
+      req.logger.info(
+        "User offline for over two days, the account will be deleted"
+      );
+
+      let email = user.email;
+      sendUserDeletedEmail(email);
+      req.logger.info("email sent to" + email);
+      await userService.deleteUser(uid);
+      req.logger.info(`User with email ${email} deleted`);
+      return res
+        .status(200)
+        .send({ message: "user deleted successfully", user });
+    }
+    req.logger.info("User has been active, the account can't be deleted");
+    return res
+      .status(400)
+      .send({ message: "Active user can´t be deleted", user });
+  } catch (error) {
+    req.logger.error(error.cause);
+    return res.status(500).send({
+      messsage: "Error deleting user",
+      error: error,
+    });
+  }
+};
 
 export const switchUser = async (req, res) => {
   const { uid } = req.params;
@@ -126,12 +138,6 @@ export const switchUser = async (req, res) => {
   res.status(200).send(newRole);
 };
 
-export const getUser = async (req, res) => {
-  const { uid } = req.params;
-  const user = await userService.getUser(uid);
-
-  res.status(200).send({ user });
-};
 
 export const uploadFiles = async (req, res) => {
   const { uid } = req.params;

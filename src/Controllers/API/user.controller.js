@@ -61,8 +61,8 @@ export const deleteUser = async (req, res) => {
   }
 };
 export const modifyUser = async (req, res) => {
-  // const { uid } = req.params;
-  const uid = res.user._id
+  const { uid } = req.params;
+
   req.logger.info(uid)
   try {
     let user = await userService.getUser(uid);

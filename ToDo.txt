@@ -34,15 +34,15 @@ git push origin -u "nombre de la rama"
 --crear mongo atlas ✔
 --hacer el dto ✔
 --optimizar las rutas ✔
---docs, tests y postman
 --optimizar dirname ✔
 --cambiar el url raiz ✔
--- cambiar url en github 
+-- cambiar url en github ✔
 --pasar a modo producción ✔
---deploy en railway app
+--deploy en railway app ✔
+--fijarse si anda factory
+--docs, tests y postman
 --exportar archivo JSON desde postman con todas las pruebas (sobre todo lo que no esté en el front)
 --video de flujo de app
---fijarse si anda factory
 --no anda el chat ✔
 
 

@@ -18,8 +18,17 @@ import {
 import { uploader } from "../../utils/multer.js";
 
 import { restoreForm } from "../../Controllers/VIEWS/user.views.controller.js";
+import cors from "cors";
+import config from "../../config/config.js";
 
 const router = Router();
+
+router.use(
+  cors({
+    credentials: true,
+    origin: config.rootUrl,
+  })
+);
 
 router.get("/", passportCall("jwt"), authorization(["admin"]), getAllUsers);
 

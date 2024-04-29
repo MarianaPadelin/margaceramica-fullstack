@@ -13,6 +13,13 @@ import {
 
 import { passportCall, authorization } from "../../utils/authorizations.js";
 const router = Router();
+router.use(
+  cors({
+    credentials: true,
+    origin: config.rootUrl,
+  })
+);
+
 
 router.get("/", getCarts);
 

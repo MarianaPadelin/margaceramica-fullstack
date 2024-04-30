@@ -32,6 +32,7 @@ export const getOneCart = async (req, res) => {
     req.logger.info(`Cart ID: ${cid}`);
     res.send({ cart });
 
+  
   } catch (error) {
     req.logger.error(error.cause);
     return res.status(500).send({ error: error.code, message: error.message });

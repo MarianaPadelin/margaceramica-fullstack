@@ -43,20 +43,20 @@ export const restoreForm = async (req, res) => {
   res.render("newPasswordForm", {});
 };
 
-// export const viewCart = async (req, res) => {
-//     try {
-//       const { cid } = req.params;
+export const viewCart = async (req, res) => {
+    try {
+      const { cid } = req.params;
 
-//       const cart = await cartService.getById(cid);
+      const cart = await cartService.getById(cid);
 
-//       let products = cart.products;
-//       req.logger.info(`Cart ID: ${cid}`);
-//       res.status(200).send(cart)
+      let products = cart.products;
+      req.logger.info(`Cart ID: ${cid}`);
+      res.status(200).send(cart)
 
-//     } catch (error) {
-//       req.logger.error(error.cause);
-//       return res
-//         .status(500)
-//         .send({ error: error.code, message: error.message });
-//     }
-// }
+    } catch (error) {
+      req.logger.error(error.cause);
+      return res
+        .status(500)
+        .send({ error: error.code, message: error.message });
+    }
+}

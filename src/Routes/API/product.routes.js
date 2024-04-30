@@ -20,7 +20,6 @@ router.use(
   })
 );
 
-// router.get("/", passportCall("jwt"), authorization("admin"), getAdminProducts);
 router.get("/", getProducts)
 
 router.get("/:pid", getOneProduct);
@@ -31,6 +30,7 @@ router.post(
   authorization(["admin", "premium"]),
   postProduct
 );
+
 
 router.put(
   "/:pid",

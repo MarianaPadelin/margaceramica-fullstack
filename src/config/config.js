@@ -22,12 +22,11 @@ export default {
   clientID: process.env.clientID,
   clientSecret: process.env.clientSecret,
   callbackURL: process.env.callbackURL,
-  persistence: "mongoDB",
+  persistence: process.env.persistence,
   emailAcount: process.env.cuentadegmail,
   appPassword: process.env.APP_PASSWORD,
-  maxLevelConsole: "info",
-  maxLevelFile: "error",
-  restoreLink:
-    "https://proyectofinalbackend-production-12a7.up.railway.app/api/users/resetPassword/",
+  maxLevelConsole: process.env.LEVEL_CONSOLE,
+  maxLevelFile: process.env.LEVEL_FILE,
+  restoreLink: process.env.restoreLink,
   rootUrl: process.env.rootUrl,
 };

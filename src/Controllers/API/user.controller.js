@@ -79,6 +79,8 @@ export const deleteUser = async (req, res) => {
     let userLastConnection = user.last_connection;
     let limitConnection = new Date();
     limitConnection.setDate(limitConnection.getDate() - 2);
+    req.logger.info(limitConnection);
+    
     if (userLastConnection < limitConnection) {
       req.logger.info(
         "User offline for over two days, the account will be deleted"

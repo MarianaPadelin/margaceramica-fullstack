@@ -5,11 +5,10 @@ const environment = program.opts().mode
 const persistence = program.opts().persist
 
 dotenv.config({
-    path: environment === "prod" ? "./src/config/.env.prod" : "./src/config/.env.dev"
+  path: `./src/config/.env.${environment}`
 })
 
-//no lo puedo sacar porque el logger todavía no está inicializado 
-// console.log("Modo de persistencia en " + persistence)
+console.log("Modo de persistencia en: " + persistence)
 console.log("Environment: " + environment)
 
 //tuve que sacar algunas variables de entorno porque railway sólo me deja poner 10. 

@@ -153,4 +153,3 @@ export default class CartDao {
   }
 }
 
-// export default new CartDao();

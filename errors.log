@@ -1,141 +1,32 @@
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: 4@gmail.com"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"error"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error"}
-{"code":"ERR_HTTP_HEADERS_SENT","level":"error"}
-{"level":"error"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error"}
-{"level":"error"}
-{"level":"error","message":"Invalid credentials for user: 4@gmail.com"}
-{"level":"error"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: 4@gmail.com"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: 4@gmail.com"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: 4@gmail.com"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: 1@gmail.com"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Both passwords must be the same"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Both passwords must be the same"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: adminCoder@coder.com"}
-{"level":"error","message":"Invalid credentials for user: adminCoder@coder.com"}
-{"level":"error","message":"Invalid credentials for user: adminCoder@coder.com"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"Invalid credentials for user: 4@gmail.com"}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"No se ha iniciado sesión."}
-{"level":"error","message":"User doesn't exist: 4@gmail.com"}
-{"level":"error","message":"User doesn't exist: 4@gmail.com"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"El usuario ya existe"}
 {"level":"fatal","message":"Prueba de logger nivel fatal en endpoint"}
 {"level":"error","message":"Prueba de logger nivel error en endpoint"}
+{"level":"error","message":"Product 662e52ae433880e6e47e9d8b not found"}
 {"level":"error"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"Time expired"}
-{"level":"error","message":"Time expired"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error","message":"Invalid credentials for user: 1@gmail.com"}

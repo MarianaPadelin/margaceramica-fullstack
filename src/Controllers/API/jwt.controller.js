@@ -1,4 +1,3 @@
-// import { validatePass, generateJWToken } from "../../utils/authorizations.js";
 import { validatePass, generateJWToken } from "../../utils/authorizations.js";
 import config from "../../config/config.js";
 import { userService } from "../../Services/services.js";
@@ -108,15 +107,15 @@ export const githubcallback = async (req, res) => {
   if (userExists.rol.includes("user")) {
     req.logger.info(`User conectado`);
     res.status(200).redirect(config.rootUrl);
-    // return res.status(200).send(userExists);
+
   } else if (userExists.rol.includes("admin")) {
     req.logger.info(`Admin conectado`);
-    // return res.status(201).send(userExists);
     res.status(201).redirect(config.rootUrl);
+
   } else if (userExists.rol.includes("premium")) {
     req.logger.info(`User premium conectado`);
-    // return res.status(202).send(userExists);
     res.status(202).redirect(config.rootUrl);
+    
   } else {
     return res.redirect(config.rootUrl);
   }

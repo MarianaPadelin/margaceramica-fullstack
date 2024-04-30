@@ -3,7 +3,7 @@
   <a href="/users"> <button> Ir al perfil del usuario </button></a>
 
   <button id="botonLogout" type="submit">LOGOUT</button>
-<button id="botonComprar" type="submit">Finalizar compra</button>
+
 </div>
 
 
@@ -35,9 +35,7 @@
           <td>{{this.stock}}</td>
           <td>{{this.thumbnails}}</td>
           <td>{{this.owner}}</td>
-          <td><form action="/api/carts/{{../cart}}/product/{{this.id}}" method="post">
-            <button   id="agregarItem" type="submit" class="bi bi-cart-plus">Add to cart</button>
-          </form></td>
+         
     
         </tr>
       {{/each}}

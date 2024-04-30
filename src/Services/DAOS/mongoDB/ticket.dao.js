@@ -6,7 +6,7 @@ export default class TicketDao {
   async getAll() {
     return await ticketModel.find();
   }
-//verificar el populate del cart
+
   async findOneTicket(_id) {
     try {
       if (mongoose.Types.ObjectId.isValid(_id)) {
@@ -28,4 +28,3 @@ export default class TicketDao {
 }
 
 
-// export default new TicketDao();

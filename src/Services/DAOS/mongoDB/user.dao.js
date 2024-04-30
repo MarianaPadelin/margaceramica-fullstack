@@ -42,7 +42,7 @@ export default class UserDao {
         const userExists = await userModel.findById(_id);
 
         if (userExists) {
-          //solo actualizar el estado si los documentos que se suben son los necesarios
+
           await userModel.findByIdAndUpdate(
             { _id },
             { status: "docsUploaded" }

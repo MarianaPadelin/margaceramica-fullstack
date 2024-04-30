@@ -1,5 +1,4 @@
 import { generateJWToken } from "../../utils/authorizations.js";
-import { logUser } from "./jwt.controller.js";
 import { userService } from "../../Services/services.js";
 import { sendUserDeletedEmail } from "../../utils/nodemailer.js";
 
@@ -16,7 +15,6 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
-
 export const getUserById = async (req, res) => {
   const { uid } = req.params;
   const user = await userService.getUser(uid);
@@ -31,11 +29,10 @@ export const findUserByEmail = async (req, res) => {
   res.status(200).send({ user });
 };
 
-
 export const modifyUser = async (req, res) => {
   const { uid } = req.params;
 
-  req.logger.info(uid)
+  req.logger.info(uid);
   try {
     let user = await userService.getUser(uid);
     let newRole;
@@ -66,10 +63,10 @@ export const modifyUser = async (req, res) => {
 
 export const deleteUser = async (req, res) => {
   const { uid } = req.params;
-  console.log(uid)
+  console.log(uid);
   try {
     const user = await userService.getUser(uid);
-    console.log(user)
+    console.log(user);
     if (!user) {
       return res.status(404).json({
         message: "User not found",
@@ -80,7 +77,7 @@ export const deleteUser = async (req, res) => {
     let limitConnection = new Date();
     limitConnection.setDate(limitConnection.getDate() - 2);
     req.logger.info(limitConnection);
-    
+
     if (userLastConnection < limitConnection) {
       req.logger.info(
         "User offline for over two days, the account will be deleted"
@@ -140,7 +137,6 @@ export const switchUser = async (req, res) => {
   res.status(200).send(newRole);
 };
 
-
 export const uploadFiles = async (req, res) => {
   const { uid } = req.params;
   const { destination } = req.params;
@@ -152,7 +148,6 @@ export const uploadFiles = async (req, res) => {
       .status(400)
       .send({ status: "error", mensaje: "No se adjunto archivo." });
   }
-  // console.log(req.file);
 
   if (destination === "profile") {
     uploadedFiles.forEach((file) => {
@@ -162,7 +157,9 @@ export const uploadFiles = async (req, res) => {
       userService.updateUserFiles(uid, imgName, imgPath);
     });
     req.logger.info("Imagen subida a profile");
+
   } else if (destination === "products") {
+
     uploadedFiles.forEach((file) => {
       const imgPath = file.path;
       const imgName = file.originalname;
@@ -170,6 +167,7 @@ export const uploadFiles = async (req, res) => {
       userService.updateUserFiles(uid, imgName, imgPath);
     });
     req.logger.info("Imágenes subida a products");
+
   } else if (destination === "documents" && uploadedFiles.length === 3) {
     uploadedFiles.forEach((file) => {
       const imgPath = file.path;
@@ -182,6 +180,7 @@ export const uploadFiles = async (req, res) => {
     userService.updateUserStatus(uid);
 
     req.logger.info("Imágenes subida a documents");
+    
   } else {
     req.logger.info("Destino desconocido");
   }

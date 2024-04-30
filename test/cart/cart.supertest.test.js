@@ -1,9 +1,14 @@
-//getCarts, getCartbyId, postCart(pero automaticamente viendo al usuario creado?)
+// npx mocha test/cart/cart.supertest.test.js
+//tengo que levantar el servidor en otra terminal --> npm run dev
+
 import config from "../../src/config/config.js";
 import supertest from "supertest";
 import { expect } from "chai";
 
+let url = config.rootUrl
+console.log(url)
 const requester = supertest(config.rootUrl);
+
 
 describe("Testing products api", () => {
   before(async function () {
@@ -49,7 +54,8 @@ describe("Testing products api", () => {
 
     //assert
     expect(result.statusCode).is.eqls(200);
-    expect(Array.isArray(result._body.data)).to.be.ok;
+    // console.log(result._body.carts)
+    expect(Array.isArray(result._body.carts)).to.be.ok;
   });
 
   it("Crear un carrito en la DB", async function () {
@@ -62,6 +68,7 @@ describe("Testing products api", () => {
       .post(`/api/carts/`)
       .set("Cookie", [`${this.cookie.name}=${this.cookie.value}`])
       .send(testCart);
+
 
     this.cartID = _body.data._id;
     //assert
@@ -80,5 +87,3 @@ describe("Testing products api", () => {
     expect(_body.cart.products).to.be.empty;
   });
 });
-
-// npx mocha test/cart/cart.supertest.test.js

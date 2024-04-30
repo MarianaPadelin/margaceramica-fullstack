@@ -1,3 +1,4 @@
+// npx mocha test/products/products.supertest.test.js
 import config from "../../src/config/config.js";
 import supertest from "supertest";
 import { expect } from "chai";
@@ -140,8 +141,6 @@ describe("Testing products api", () => {
     expect(statusCode).is.eqls(201);
 
     const result = await requester.get(`/api/products/${this.productID}`);
-    expect(result.ok).is.eqls(false);
+    expect(result._body.product).is.eqls("Product not found");
   });
 });
-
-// npx mocha test/products/products.supertest.test.js

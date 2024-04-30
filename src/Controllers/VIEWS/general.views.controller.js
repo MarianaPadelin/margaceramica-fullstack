@@ -16,18 +16,13 @@ export const getChat = async (req, res) => {
   });
 };
 
+//función que sólo renderiza los productos en handlebars
 export const getProducts = async (req, res) => {
   try {
     const { limit, page, category, stock } = req.query;
     const products = await productService.filter(limit, page, category, stock);
     res.render("products", {
       products,
-      // id: req.user._id,
-      // role: req.user.role,
-      // user: req.user.name,
-      // age: req.user.age,
-      // email: req.user.email,
-      // cart: req.user.cart,
       fileCss: "index.css",
     });
   } catch (error) {
@@ -37,16 +32,11 @@ export const getProducts = async (req, res) => {
 };
 
 
-
 export const resetView = async (req, res) => {
   res.render("resetPassword", {})
 }
 
 export const frontEndUser = async (req,res) =>{
-
-//  req.logger.debug("llego a la funcion test")
  const usuario = req.user
-//  console.log("funcion test usuario: ")
-//  console.log(usuario)
  res.send(usuario)
 }

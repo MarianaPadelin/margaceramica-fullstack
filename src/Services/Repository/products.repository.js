@@ -25,4 +25,3 @@ export default class ProductsRepository {
   };
 }
 
-// export default new ProductsRepository();

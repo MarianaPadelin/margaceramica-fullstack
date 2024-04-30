@@ -8,7 +8,6 @@ import ProductsRepository from "./Repository/products.repository.js";
 import TicketRepository from "./Repository/ticket.repository.js";
 import userRepository from "./Repository/user.repository.js";
 
-// Generamos las instancias de las clases
 const productDao = new ProductDao()
 const cartDao = new CartDao()
 const ticketDao = new TicketDao()

@@ -8,7 +8,6 @@ import {
   invalidIDError,
 } from "../../Services/errors/messages/cartErrors.msg.js";
 import { sendEmail } from "../../utils/nodemailer.js"
-// import { sendEmail } from "../../utils/nodemailer.js";
 
 export const getCarts = async (req, res) => {
   try {
@@ -28,8 +27,6 @@ export const getOneCart = async (req, res) => {
     const { cid } = req.params;
 
     const cart = await cartService.getById(cid);
-
-    // let totalPrice = await CartRepository.getTotal(cart);
 
     let products = cart.products;
     req.logger.info(`Cart ID: ${cid}`);

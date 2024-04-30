@@ -9,41 +9,20 @@ import {
 import { productService } from "../../Services/services.js";
 import { sendProductDeletedEmail } from "../../utils/nodemailer.js";
 
-//PARA PÚBLICO EN GENERAL (sin mostrar datos de cuenta)
+
 export const getProducts = async (req, res) => {
   const { limit, page, category, stock } = req.query;
-    // console.log(req.query)
     
   try {
     const products = await productService.filter(limit, page, category, stock);
       res.status(200).json(products)
-    // res.status(200).render("productsLibre", {
-    //   products,
-    //   // fileCss: "index.css",
-    // });
+
   } catch (error) {
     req.logger.error(error.cause);
     return res.status(500).send({ error: error.code, message: error.message });
   }
 };
 
-//PARA ADMIN (sin carrito):
-// export const getAdminProducts = async (req, res) => {
-//   const { limit, page, category, stock } = req.query;
-//   try {
-//     const products = await productService.filter(limit, page, category, stock);
-
-//     res.status(200).render("productsAdmin", {
-//       user: req.user.name,
-//       role: req.user.role,
-//       products,
-//       fileCss: "index.css",
-//     });
-//   } catch (error) {
-//     req.logger.error(error.cause);
-//     return res.status(500).send({ error: error.code, message: error.message });
-//   }
-// };
 
 //PARA PREMIUM (vista de edicion con solamente sus productos):
 export const getOwnerProducts = async (req, res) => {
@@ -63,45 +42,19 @@ export const getOwnerProducts = async (req, res) => {
       res.status(200).send({
           products,
       });
-    // res.status(200).render("productsAdmin", {
-    //   user: req.user.name,
-    //   role: req.user.role,
-    //   products,
-    //   fileCss: "index.css",
-    // });
+
   } catch (error) {
     req.logger.error(error.cause);
     return res.status(500).send({ error: error.code, message: error.message });
   }
 };
 
-//PARA USERS:
-// export const getUserProducts = async (req, res) => {
-//   const { limit, page, category, stock } = req.query;
-//   // console.log(req.query)
-//   try {
-//     const products = await productService.filter(limit, page, category, stock);
-
-//     res.status(200).render("products", {
-//       id: req.user._id,
-//       user: req.user.name,
-//       role: req.user.role,
-//       cart: req.user.cart,
-//       products,
-//       fileCss: "index.css",
-//     });
-//   } catch (error) {
-//     req.logger.error(error.cause);
-//     return res.status(500).send({ error: error.code, message: error.message });
-//   }
-// };
 
 export const getOneProduct = async (req, res) => {
   try {
     const { pid } = req.params;
 
     const product = await productService.getById(pid);
-    //hacer render con vista del producto individual
     res.status(201).json({
       product,
     });

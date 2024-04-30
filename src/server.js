@@ -8,8 +8,6 @@ import passport from "passport";
 import inicializePassport from "./config/passport.config.js";
 
 import __dirname from "./dirname.js";
-// import authorization from "./utils/authorizations.js"
-
 
 import cors from "cors";
 import compression from "express-compression";
@@ -40,12 +38,11 @@ import cookieParser from "cookie-parser";
 
 import config from "./config/config.js";
 
-// import { addLogger } from "./dirname.js";
 import { addLogger } from "./utils/loggers.js";
 import logger from "./utils/loggers.js";
+
 const app = express();
 const PORT = config.port;
-
 
 //Middleware de logger
 app.use(addLogger);
@@ -139,7 +136,6 @@ app.use(
   session({
     store: MongoStore.create({
       mongoUrl: config.mongoUrl,
-      // mongoOptions: { useNewUrlParser: true },
       ttl: 10 * 60,
     }),
     secret: config.secret,

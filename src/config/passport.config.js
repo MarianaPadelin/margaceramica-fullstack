@@ -1,16 +1,12 @@
 import passport from "passport";
 import passportLocal from "passport-local";
 import { createHash, validatePass, PRIVATE_KEY } from "../utils/authorizations.js";
-// import { createHash, validatePass, PRIVATE_KEY } from "../utils/dirname.js";
 import jwtStrategy from "passport-jwt";
 import GitHubStrategy from "passport-github2";
 import config from "./config.js";
 import { cartService } from "../Services/services.js";
 import { userService } from "../Services/services.js";
 import __dirname from "../dirname.js";
-// import UserDTO from "../Services/DTOS/user.dto.js";
-
-// import __dirname from "../utils/dirname.js";
 
 //Declaramos la estrategia (qué tipo de passport voy a usar)
 const localStrategy = passportLocal.Strategy;
@@ -150,11 +146,9 @@ const inicializePassport = () => {
             cart: newCart,
             loggedBy: "passportLocal",
           };
-          // const userDTO = new UserDTO({_id, first_name, last_name, email}) 
           const result = await userService.createUser(user);
           return done(null, result);
         } catch (error) {
-          // console.log(error);
           req.logger.error(error);
           return done("Error de register" + error);
         }

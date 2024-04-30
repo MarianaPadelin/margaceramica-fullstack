@@ -5,16 +5,6 @@ import { v4 } from "uuid";
 import { ticketService } from "../Services/services.js";
 import { userService } from "../Services/services.js";
 import { validatePass } from "./authorizations.js";
-// import { addLogger } from "./dirname.js";
-
-
-// import path from "path";
-
-// import { fileURLToPath } from "url";
-
-// const __filename = fileURLToPath(import.meta.url);
-
-// const __dirname = path.dirname(__filename);
 
 //NODEMAILER:
 // configuracion de transport

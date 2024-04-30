@@ -1,3 +1,4 @@
+# rootUrl/apidocs -- iniciar sesión previamente 
 paths:
   /api/carts:
     get:

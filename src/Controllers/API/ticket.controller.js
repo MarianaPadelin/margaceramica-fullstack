@@ -1,5 +1,4 @@
 import { ticketService } from "../../Services/services.js";
-import config from "../../config/config.js";
 import __dirname from "../../dirname.js";
 
 export const getAllTickets = async (req, res) => {

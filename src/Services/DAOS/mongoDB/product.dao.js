@@ -21,7 +21,7 @@ export default class ProductDao {
         return "Product not found";
       }
        return { error: "Id format not valid" };
-      // console.log("Get by id: Formato de id no válido");
+
     } catch (error) {
       return error;
     }
@@ -77,8 +77,8 @@ export default class ProductDao {
         return "Product not found";
       }
        return { error: "Id format not valid" };
-      // console.log("Modify: Formato de id no válido");
-    } catch (error) {
+
+      } catch (error) {
       return error;
     }
   }
@@ -95,8 +95,8 @@ export default class ProductDao {
         return "Product not found";
       }
        return { error: "Id format not valid" };
-      // console.log("Delete: Formato de id no válido");
-    } catch (error) {
+
+      } catch (error) {
       return error;
     }
   }

@@ -1,3 +1,5 @@
+// npx mocha test/user/users.supertest.test.js
+
 import mongoose from "mongoose";
 import config from "../../src/config/config.js";
 import supertest from "supertest";
@@ -12,7 +14,7 @@ describe("Testing session usando cookies", () => {
     this.testUser = {
       first_name: "testUser",
       last_name: "testUser",
-      email: "testUser@gmail.com",
+      email: config.adminMail,
       age: 30,
       password: "123",
     };
@@ -54,7 +56,7 @@ describe("Testing session usando cookies", () => {
     this.userID = result._body._id;
 
     //assert
-    expect(result.statusCode).is.eql(200);
+    expect(result.statusCode).is.eql(201);
 
     //extraemos la cookie para guardarla en la variable global this.cookie
     const cookieData = cookieResult.split("=");
@@ -67,7 +69,6 @@ describe("Testing session usando cookies", () => {
     expect(this.cookie.value).to.be.ok;
   });
 
-
   it("Traer al usuario buscado por ID", async function () {
     //given
     //test
@@ -76,13 +77,11 @@ describe("Testing session usando cookies", () => {
       .set("Cookie", [`${this.cookie.name}=${this.cookie.value}`]);
 
     //assert
+    console.log(result._body.user._id)
     expect(result.statusCode).is.eqls(200);
-    // expect(result._body).to.be.ok.and.eql(this.userID);
+    expect(result._body.user._id).to.be.ok.and.eql(this.userID);
   });
 
-  // after(function () {
-  //   mongoose.connection.collections.users.drop();
-  // })
 });
 
-// npx mocha test/user/users.supertest.test.js
+

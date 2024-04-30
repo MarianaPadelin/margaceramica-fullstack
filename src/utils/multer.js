@@ -4,7 +4,6 @@ import __dirname from "../dirname.js";
 const storage = multer.diskStorage({
   // ubicaion del directorio donde voy a guardar los archivos
   destination: function (req, file, cb) {
-    //acá es donde tengo que hacer la validación??
     const { destination } = req.params;
     if (destination === "profile") {
       cb(null, `${__dirname}/public/img/profile`);
@@ -17,7 +16,6 @@ const storage = multer.diskStorage({
 
   // el nombre que quiero que tengan los archivos que voy a subir
   filename: function (req, file, cb) {
-    // console.log(file);
 
     cb(null, `${Date.now()}-${file.originalname}`);
   },

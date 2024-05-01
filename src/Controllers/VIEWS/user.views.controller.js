@@ -17,27 +17,6 @@ export const getUsers = async (req, res) => {
   });
 };
 
-// export const getProducts = async (req, res) => {
-//   try {
-//     const { limit, page, category, stock } = req.query;
-//     const products = await productService.filter(limit, page, category, stock);
-//     res.render("products", {
-//       products,
-//       id: req.user._id,
-//       role: req.user.role,
-//       user: req.user.name,
-//       age: req.user.age,
-//       email: req.user.email,
-//       cart: req.user.cart,
-//       fileCss: "index.css",
-//     });
-//   } catch (error) {
-//     req.logger.error(error.cause);
-//     return res.status(500).send({ error: error.code, message: error.message });
-//   }
-  
-// };
-
 
 export const restoreForm = async (req, res) => {
   res.render("newPasswordForm", {});

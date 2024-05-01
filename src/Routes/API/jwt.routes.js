@@ -43,6 +43,7 @@ router.get(
   passport.authenticate("github", { scope: ["user: email"] })
 );
 
+
 //para volver desde la pagina de autorización de github a mi pagina
 
 router.get(

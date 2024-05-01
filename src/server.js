@@ -60,8 +60,8 @@ io.on("connection", (socket) => {
   logger.info("Nuevo usuario conectado");
   socket.on("message", (data) => {
     messages.push(data);
-    console.log("recibiendo mensajes")
-    console.log(data)
+    logger.info("recibiendo mensajes")
+    logger.info(data)
     messagesDao.addMessage(data);
     io.emit("messages", messages);
   });

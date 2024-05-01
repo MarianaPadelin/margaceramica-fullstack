@@ -5,8 +5,6 @@ import config from "../../src/config/config.js";
 import supertest from "supertest";
 import { expect } from "chai";
 
-let url = config.rootUrl
-console.log(url)
 const requester = supertest(config.rootUrl);
 
 
@@ -54,7 +52,7 @@ describe("Testing products api", () => {
 
     //assert
     expect(result.statusCode).is.eqls(200);
-    // console.log(result._body.carts)
+
     expect(Array.isArray(result._body.carts)).to.be.ok;
   });
 

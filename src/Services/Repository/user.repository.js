@@ -33,7 +33,6 @@ export default class UserRepository {
     return await this.dao.findUser(email);
   };
   createUser = async (user) => {
-    console.log("llego al repository")
     return await this.dao.createUser(user);
   };
 }

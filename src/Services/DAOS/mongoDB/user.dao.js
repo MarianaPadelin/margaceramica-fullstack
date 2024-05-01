@@ -108,7 +108,6 @@ export default class UserDao {
         { password: newPassword }
       );
 
-      console.log(result);
       return result;
     } catch (error) {
       return error;

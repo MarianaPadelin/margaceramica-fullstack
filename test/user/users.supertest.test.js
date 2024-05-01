@@ -77,7 +77,7 @@ describe("Testing session usando cookies", () => {
       .set("Cookie", [`${this.cookie.name}=${this.cookie.value}`]);
 
     //assert
-    console.log(result._body.user._id)
+
     expect(result.statusCode).is.eqls(200);
     expect(result._body.user._id).to.be.ok.and.eql(this.userID);
   });

@@ -212,7 +212,7 @@ export const finalizarCompra = async (req, res) => {
 
           
        })
-        console.log(nombreProductos)
+
         const ticket = {
           amount,
           cart,

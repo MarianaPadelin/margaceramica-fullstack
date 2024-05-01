@@ -8,7 +8,6 @@ import {
   deleteUser,
   modifyUser,
 } from "../../Controllers/API/user.controller.js";
-// import { passportCall, authorization } from "../../utils/authorizations.js";
 import { passportCall, authorization } from "../../utils/authorizations.js";
 
 import {
@@ -34,8 +33,6 @@ router.use(
 router.get("/", passportCall("jwt"), authorization(["admin"]), getAllUsers);
 
 router.get("/:uid", passportCall("jwt"), authorization(["admin"]), getUserById);
-
-// router.get("/:email", passportCall("jwt"), authorization(["admin"]), findUserByEmail)
 
 router.put("/:uid", passportCall("jwt"), authorization(["admin"]), modifyUser);
 

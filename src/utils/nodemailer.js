@@ -5,6 +5,8 @@ import { v4 } from "uuid";
 import { ticketService } from "../Services/services.js";
 import { userService } from "../Services/services.js";
 import { validatePass } from "./authorizations.js";
+import logger from "./loggers.js";
+
 
 //NODEMAILER:
 // configuracion de transport
@@ -21,11 +23,9 @@ const transporter = nodemailer.createTransport({
 // Verificamos conexion con gmail
 transporter.verify(function (error, success) {
   if (error) {
-    console.log(`Error de verificación ${error}`);
-    // logger.error(`Error de verificación ${error}`);
+    logger.error(`Error de verificación ${error}`);
   } else {
-    console.log("Server is ready to take our messages");
-    // logger.info("Server is ready to take our messages");
+    logger.info("Server is ready to take our messages");
   }
 });
 
@@ -34,8 +34,8 @@ export const sendEmail = async (id, email) => {
     const data = await ticketService.getById(id);
     const { _id, products, amount, purchaser, purchase_datetime } = data;
     let productsString = JSON.stringify(products);
-    // logger.info(data);
-    console.log(data)
+    logger.info(data);
+
     let result = transporter.sendMail({
       from: "Ecommerce Proyecto Final - " + config.emailAcount,
       to: email,
@@ -55,13 +55,13 @@ export const sendEmail = async (id, email) => {
       </div>`,
       attachments: [],
     });
-    console.log(`Email sent to: ${email}`);
-    // logger.info(`Email sent to: ${email}`);
+
+    logger.info(`Email sent to: ${email}`);
 
     return result;
   } catch (error) {
-    console.log(error)
-    // logger.error(error);
+
+    logger.error(error);
     return error;
   }
 };
@@ -79,17 +79,16 @@ export const sendUserDeletedEmail = async (email) => {
          Si desea volver a utilizarla deberá volver a registrarse. Saludos.  </h1></div>`,
         attachments: [],
       });
-      console.log(`Email sent to: ${email}`);
-      // logger.info(`Email sent to: ${email}`);
+
+      logger.info(`Email sent to: ${email}`);
 
       return result;
     }
-    console.log("User not found");
-    // req.logger.error("User not found");
+
+    req.logger.error("User not found");
     return "User not found";
   } catch (error) {
-    console.log(error)
-    // logger.error(error);
+    logger.error(error);
     return error;
   }
 };
@@ -106,34 +105,31 @@ export const sendProductDeletedEmail = async (email, productTitle) => {
         html: `<div><h1>Notificamos que se ha eliminado el producto ${productTitle} </h1></div>`,
         attachments: [],
       });
-      console.log(`Email sent to: ${email}`);
-      // logger.info(`Email sent to: ${email}`);
+      logger.info(`Email sent to: ${email}`);
 
       return result;
     }
-    console.log("User not found");
-    // req.logger.error("User not found");
+
+    req.logger.error("User not found");
     return "User not found";
   } catch (error) {
-    console.log("User not found");
-    // logger.error(error);
+
+    logger.error(error);
     return error;
   }
 };
 
 
-/*=============================================
-=                   Password Reset            =
-=============================================*/
+//Reset de contraseña:
 
 const mailOptionsToReset = {
   from: config.emailAcount,
   subject: "Reset password",
 };
 
-//esto guardarlo en bbdd
+
 const tempDbMails = {};
-//tengo que generar una vista con un campo para ingresar el email
+
 export const resetPasswordEmail = async (req, res) => {
   try {
     const { email } = req.body;
@@ -160,8 +156,8 @@ export const resetPasswordEmail = async (req, res) => {
 
     transporter.sendMail(mailOptionsToReset, (error, info) => {
       if (error) {
-        console.log(error)
-        // logger.error(error);
+
+        logger.error(error);
         res.status(500).send({ message: "Error", payload: error });
       }
       res.status(200).send({ message: "Success", payload: info });
@@ -212,8 +208,8 @@ export const restorePassword = async (req, res) => {
 
     return res.status(200).send("contraseña actualizada");
   } catch (error) {
-    console.log(error)
-    // logger.error(error);
+
+    logger.error(error);
     return error;
   }
 };

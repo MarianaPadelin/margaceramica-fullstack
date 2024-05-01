@@ -1,5 +1,6 @@
 import multer from "multer";
 import __dirname from "../dirname.js";
+import logger from "./loggers.js";
 
 const storage = multer.diskStorage({
   // ubicaion del directorio donde voy a guardar los archivos
@@ -25,7 +26,7 @@ export const uploader = multer({
   storage,
   // si se genera algun error, lo capturamos
   onError: function (err, next) {
-    console.log(err);
+    logger.error(err);
     next();
   },
 });

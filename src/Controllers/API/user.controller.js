@@ -38,19 +38,21 @@ export const modifyUser = async (req, res) => {
     let newRole;
 
     if (!user) {
-      res.status(404).json({
+     return res.status(404).send({
         message: "User not found",
       });
     }
+
     const prevRole = user.rol;
     if (prevRole === "user") {
       newRole = "premium";
       await userService.updateUserRole(uid, newRole);
-      return req.logger.info(`User ${uid} changed role to ${newRole}`);
+      req.logger.info(`User ${uid} changed role to ${newRole}`);
+      return res.status(200).send({ message: "changed role to premium", user });
     } else {
       newRole = "user";
       await userService.updateUserRole(uid, newRole);
-      return req.logger.info(`User ${uid} changed role to ${newRole}`);
+      return res.status(200).send({message: "changed role to user", user});
     }
   } catch (error) {
     req.logger.error(error);
@@ -63,10 +65,10 @@ export const modifyUser = async (req, res) => {
 
 export const deleteUser = async (req, res) => {
   const { uid } = req.params;
-  console.log(uid);
+
   try {
     const user = await userService.getUser(uid);
-    console.log(user);
+
     if (!user) {
       return res.status(404).json({
         message: "User not found",

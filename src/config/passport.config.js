@@ -48,7 +48,6 @@ const inicializePassport = () => {
       //estos parámetros son propios de passport
       async (accesstoken, refreshtoken, profile, done) => {
         try {
-          console.log("llego a la funcion github passport")
           const email = profile._json.email;
           const userExists = await userService.findUser(email);
           if (!userExists) {

@@ -30,13 +30,6 @@ router.get(
   getUsers
 );
 
-//Vista del listado de productos con la bienvenida al usuario y la opción de ver su carrito
-// router.get(
-//   "/products",
-//   passportCall("jwt"),
-//   authorization(["user", "premium"]),
-//   getUserProducts
-// );
 
 //vista del carrito para front
 router.get(
@@ -46,17 +39,4 @@ router.get(
   viewCart
 );
 
-// router.get(
-//   "/addProduct",
-//   passportCall("jwt"),
-//   authorization(["admin", "premium"]),
-//   getProductForm
-// );
-
-// router.get(
-//   "/editProduct/:pid",
-//   passportCall("jwt"),
-//   authorization(["admin", "premium"]),
-//   getEditForm
-// );
 export default router;

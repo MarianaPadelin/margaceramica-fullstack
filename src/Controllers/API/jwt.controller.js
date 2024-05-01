@@ -86,7 +86,6 @@ export const logout = async (req, res) => {
 };
 
 export const githubcallback = async (req, res) => {
-  console.log("llego a github callback")
   const userExists = req.user;
 
   const tokenUser = {

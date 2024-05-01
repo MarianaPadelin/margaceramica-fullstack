@@ -87,7 +87,7 @@ form.addEventListener("submit", (e) => {
   const obj = {};
 
   data.forEach((value, key) => (obj[key] = value));
-  console.log(uid)
+
   fetch(`/api/users/${uid}/documents`, {
     method: "POST",
     body: JSON.stringify(obj),

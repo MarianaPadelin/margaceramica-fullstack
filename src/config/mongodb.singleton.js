@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import config from "./config.js";
 import __dirname from "../dirname.js";
+import logger from "../utils/loggers.js";
 
 export default class MongoSingleton {
   static #instance;
@@ -11,8 +12,8 @@ export default class MongoSingleton {
 
   static getInstance() {
     if (this.#instance) {
+      logger.warning("Ya se ha abierto una conexion a MongoDB.");
 
-      console.log("Ya se ha abierto una conexion a MongoDB.");
     } else {
       this.#instance = new MongoSingleton();
     }

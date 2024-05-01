@@ -18,17 +18,17 @@ form.addEventListener("submit", (e) => {
     .then((result) => {
       if (result.status === 200 || result.status === 202) {
         result.json().then((json) => {
-          console.log("Data: " + data);
-          console.log("Cookies generadas:");
-          console.log(document.cookie);
+
+          console.log("Cookies generadas");
+
           alert("Usuario conectado");
 
           return window.location.replace("/products");
         });
       } else if (result.status === 201) {
-        console.log("Data: " + data);
-        console.log("Cookies generadas:");
-        console.log(document.cookie);
+
+        console.log("Cookies generadas");
+
         alert("Admin conectado");
 
         return window.location.replace("/products");

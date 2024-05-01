@@ -1,18 +1,5 @@
 --modificar la ruta api/products/getProduct/:id (sacarle el getProduct) ✔
 
--------combinación con frontend------
-
-
-tengo que agregar: 
-limite
-filtrado por stock
-sort por precio
-
-ver que pasa cuando se vence la sesión (no cuando se cierra)
-mostrar el precio con descuento en "precio final" en carrito
-vista del chat en front ✔
-vista de contacto ✔
-
 
 ---pasos para el deploy--- 
 en el script principal cambiar nodemon por node ✔
@@ -37,11 +24,14 @@ git push origin -u "nombre de la rama"
 --pasar a modo producción ✔
 --deploy en railway app ✔
 --docs, tests y postman ✔
---no anda la ruta switch role admin en postman
---exportar archivo JSON desde postman con todas las pruebas (sobre todo lo que no esté en el front)
---video de flujo de app
+--no anda la ruta switch role admin en postman ✔
+--exportar archivo JSON desde postman con todas las pruebas (sobre todo lo que no esté en el front) ✔
+--video de flujo de app ✔
 --no anda el chat ✔
 --sacar el código de descuento ✔
+--revisar la direccion para reestablecer contraseña en deploy
+--revisar el put product, lo que devuelve ✔
+--revisar editar un producto en el deploy
 
 
 
@@ -49,63 +39,11 @@ git push origin -u "nombre de la rama"
 --Detalles finales--
 
 --poner todos los arrays de fotos de productos ✔
---ver loggers en archivo nodemailer
---borrar los console.log
+--ver loggers en archivo nodemailer ✔
+--borrar los console.log ✔
 --revisar las vistas de handlebars y borrar las que están en el front ✔
---enviar el .env aparte (dev y prod y test)
---enviar datos extra: mail admin, 
---borrar archivo .errors
+--enviar el .env aparte (dev y prod y test) ✔
+--enviar datos extra: mail admin, ✔
+--borrar archivo .errors ✔
 
-
--- Para mandar en la entrega --
-
-Hola Ale (o el tutor adjunto que corresponda), envío mi proyecto. 
-Espero haber hecho todo. Fue un desafío muy grande pero aprendí mucho en el proceso.
-Mi idea es que con esta base le pueda hacer un ecommerce a mi tía (la creadora de toda la cerámica!)
-Gracias por la paciencia durante la cursada y espero con ansias la devolución, saludos!! 
-
-A contiunuación paso los datos: 
-URL de front end: https://proyectofinalfrontend-production-b4ee.up.railway.app/ (conectada con el back) con el despliegue de la pagina, inicio de sesión y registro, proceso de compra completo, vista de admin, reestablecer contraseña 
-URL de back end: https://proyectofinalbackend-production-12a7.up.railway.app/ con vista muy básica para iniciar sesion, registrarse, paginación, ver el carrito y usar el chat
-En el repositorio está incluido el JSON de postman con acceso a todas las rutas
-Tambien está incluido la parte de documentación con swagger (en la carpeta docs) y los supertest (carpeta test)
-Adjunto un link a video mostrando la navegabilidad de la página: 
-
-Para entrar a la página como administrador, el usuario es "adminCoder@coder.com" y la contraseña "COderPass".
-
-Las variables de entorno son: 
-
-Producción:
-
-PRIVATE_KEY = "PrivateKeyBackend"
-PORT = 8080
-
-LEVEL_CONSOLE = info
-LEVEL_FILE = error
-
-secret = "CoderS3cr3tC0d3"
-
-MONGO_URL= "mongodb+srv://marianapadelin:test@clusterbackend.biiqs0l.mongodb.net/prod?retryWrites=true&w=majority&appName=ClusterBackend"
-# mongo_password: "test"
-
-rootUrl = "https://proyectofinalfrontend-production-b4ee.up.railway.app"
-
-ADMIN_MAIL= "adminCoder@coder.com"
-ADMIN_PASSWORD = "COderPass"
-
-RESTORE_PASSWORD_EMAIL = "http://localhost:8080/api/users/resetPassword/"
-
---Github Strategy
-
-clientID = "Iv1.7c99009db2e303e2"
-clientSecret = "188861357621fa3eeff39aa6a53929552a73179e"
-
-Developement(las demás variables son iguales): 
-PORT = 8080
-LEVEL_CONSOLE = debug
-LEVEL_FILE = error
-rootUrl = "http://localhost:8080"
-
-Test(las demas variables son iguales a dev): 
-MONGO_URL= "mongodb+srv://marianapadelin:test@clusterbackend.biiqs0l.mongodb.net/test?retryWrites=true&w=majority&appName=ClusterBackend"
 

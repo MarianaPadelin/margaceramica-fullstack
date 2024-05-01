@@ -11,7 +11,6 @@ dotenv.config({
 console.log("Modo de persistencia en: " + persistence)
 console.log("Environment: " + environment)
 
-//tuve que sacar algunas variables de entorno porque railway sólo me deja poner 10. 
 export default {
   port: process.env.PORT || 8080,
   mongoUrl: process.env.MONGO_URL,
@@ -27,6 +26,7 @@ export default {
   appPassword: process.env.APP_PASSWORD,
   maxLevelConsole: process.env.LEVEL_CONSOLE,
   maxLevelFile: process.env.LEVEL_FILE,
-  restoreLink: process.env.restoreLink,
+  restoreLink: process.env.RESTORE_PASSWORD_EMAIL,
   rootUrl: process.env.rootUrl,
 };
+

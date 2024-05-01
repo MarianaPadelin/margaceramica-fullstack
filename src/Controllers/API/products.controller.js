@@ -1,5 +1,3 @@
-//ver donde hay un repository 
-// import ProductsRepository from "../../Services/Repository/products.repository.js";
 import CustomError from "../../Services/errors/customError.js";
 import EErrors from "../../Services/errors/error-dictionary.js";
 import {
@@ -82,7 +80,7 @@ export const postProduct = async (req, res) => {
     };
 
     req.logger.info(`producto ingresado: ${datosProducto}`);
-    // console.log(datosProducto)
+
 
     if (!title || !description || !price || !code || !category || !stock) {
       CustomError.createError({
@@ -127,15 +125,18 @@ export const changeProduct = async (req, res) => {
     const product = await productService.getById(pid);
 
     if (product.owner === req.user.email || req.user.role === "admin") {
-      productService.update(pid, datosProducto);
+     await productService.update(pid, datosProducto)
+     const prodModificado = await productService.getById(pid)
       if(req.user.role === "admin") {
-        return res.status(201).json({
-          product,
+        return res.status(201).send({
+          message: "producto modificado",
+          prodModificado,
         });
       }
       if (req.user.role === "premium") {
-        return res.status(200).json({
-          product,
+        return res.status(200).send({
+          message: "producto modificado",
+          prodModificado,
         });
       }
       

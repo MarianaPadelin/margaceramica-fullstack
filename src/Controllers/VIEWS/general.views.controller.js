@@ -2,7 +2,7 @@ import MessagesDao from "../../Services/DAOS/mongoDB/messages.dao.js";
 import { productService } from "../../Services/services.js";
 
 export const home = (req, res) => {
-  res.json("Servidor conectado");
+  res.json("Servidor conectado.");
 };
 
 export const getChat = async (req, res) => {

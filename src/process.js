@@ -1,7 +1,7 @@
 import { Command } from "commander";
 
 const program = new Command();
-//para cambiar de modo: nodemon src/server.js --mode prod
+//para cambiar de modo: nodemon index.js --mode prod
 program
   .option("-d", "Varaible para debug", false) //primero va la variable, luego la descripcion y al final puede ir un valor por defecto.
   .option("-p <port>", "Puerto del servidor", 9090)

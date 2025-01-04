@@ -7,10 +7,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/server.js --mode prod",
-    "dev": "nodemon src/server.js",
-    "prod": "nodemon src/server.js --mode prod",
-    "test": "nodemon src/server.js --mode test"
+    "start": "node index.js --mode prod",
+    "dev": "nodemon index.js",
+    "prod": "nodemon index.js --mode prod",
+    "test": "nodemon index.js --mode test"
   },
   "author": "",
   "license": "ISC",

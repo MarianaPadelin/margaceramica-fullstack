@@ -2,33 +2,33 @@ import express from "express";
 import handlebars from "express-handlebars";
 
 import MongoStore from "connect-mongo";
-import MongoSingleton from "./config/mongodb.singleton.js";
+import MongoSingleton from "./src/config/mongodb.singleton.js";
 
 import passport from "passport";
-import inicializePassport from "./config/passport.config.js";
+import inicializePassport from "./src/config/passport.config.js";
 
 import __dirname from "./dirname.js";
 
 import cors from "cors";
 import compression from "express-compression";
 
-import viewRouter from "./Routes/VIEWS/views.routes.js";
-import productRouter from "./Routes/API/product.routes.js";
-import userRouter from "./Routes/API/user.routes.js";
-import usersViewsRouter from "./Routes/VIEWS/user.views.routes.js";
-import githubViewRouter from "./Routes/VIEWS/github.views.routes.js";
-import cartRouter from "./Routes/API/cart.routes.js";
-import jwtRouter from "./Routes/API/jwt.routes.js";
+import viewRouter from "./src/Routes/VIEWS/views.routes.js";
+import productRouter from "./src/Routes/API/product.routes.js";
+import userRouter from "./src/Routes/API/user.routes.js";
+import usersViewsRouter from "./src/Routes/VIEWS/user.views.routes.js";
+import githubViewRouter from "./src/Routes/VIEWS/github.views.routes.js";
+import cartRouter from "./src/Routes/API/cart.routes.js";
+import jwtRouter from "./src/Routes/API/jwt.routes.js";
 import ticketRouter from "./Routes/API/ticket.routes.js";
-import mockingRouter from "./Routes/API/mocking.routes.js";
-import loggerTestRouter from "./Routes/API/logger.routes.js";
-import premiumRouter from "./Routes/API/product.premium.routes.js";
+import mockingRouter from "./src/Routes/API/mocking.routes.js";
+import loggerTestRouter from "./src/Routes/API/logger.routes.js";
+import premiumRouter from "./src/Routes/API/product.premium.routes.js";
 
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUIExpress from "swagger-ui-express";
 
 import { Server } from "socket.io";
-import messagesDao from "./Services/DAOS/mongoDB/messages.dao.js";
+import messagesDao from "./src/Services/DAOS/mongoDB/messages.dao.js";
 
 import Handlebars from "handlebars";
 import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access";
@@ -36,10 +36,10 @@ import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access
 import session from "express-session";
 import cookieParser from "cookie-parser";
 
-import config from "./config/config.js";
+import config from "./src/config/config.js";
 
-import { addLogger } from "./utils/loggers.js";
-import logger from "./utils/loggers.js";
+import { addLogger } from "./src/utils/loggers.js";
+import logger from "./src/utils/loggers.js";
 
 const app = express();
 const PORT = config.port;
